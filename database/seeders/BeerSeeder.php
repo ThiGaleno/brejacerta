@@ -24,6 +24,7 @@ class BeerSeeder extends Seeder
             'glass' => 'copo americano',
             'temperature' => 2,
             'food_pairing' => 'mortadela',
+            'manufacturer' => 'ambev',
         ];
         $beer = Beer::create($beers);
 
@@ -67,6 +68,7 @@ class BeerSeeder extends Seeder
             'glass' => 'copo americano',
             'temperature' => 3,
             'food_pairing' => 'torresmo',
+            'manufacturer' => 'ambev'
         ];
         $beer = Beer::create($beers);
 

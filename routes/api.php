@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\BeerController@index')->name('beer.index');
+Route::get('/', 'App\Http\Controllers\Api\BeerController@index')->name('beer.index');
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();

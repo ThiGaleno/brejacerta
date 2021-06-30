@@ -23,7 +23,9 @@ class CreateBeersTable extends Migration
             $table->string('glass');
             $table->integer('temperature')->comment('temperatura em graus celsius');
             $table->string('food_pairing');
-            $table->string('url_photo');
+            $table->string('manufacturer');
+            $table->string('description')->default('sem descrição no momento, obrigado');
+            $table->string('url_photo')->default('ainda sem foto');
             $table->timestamps();
         });
     }
