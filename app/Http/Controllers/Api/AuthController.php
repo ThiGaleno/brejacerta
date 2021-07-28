@@ -3,10 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserRequestRegister;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class AuthController extends Controller
 {

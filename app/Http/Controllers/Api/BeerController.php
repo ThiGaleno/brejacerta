@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Beer;
-use App\Repository\Contracts\BeerInterface;
 use Illuminate\Http\Request;
 use App\Services\BeerService;
+use App\Traits\ApiResponser;
+
 
 class BeerController extends Controller
 {
+    use ApiResponser;
+
     private $beerService;
     public function __construct(BeerService $beerService)
     {
@@ -29,7 +31,7 @@ class BeerController extends Controller
                     $beers[$key]["rating"] = $this->beerService->getMediaRatings($beer->rating);
                 }
             }
-        return response($beers, 200);
+        return $this->success($beers, 200);
     }
 
     /**
