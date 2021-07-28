@@ -3,14 +3,8 @@
 namespace App\Services;
 
 use App\Models\Beer;
-use App\Models\Rating;
 
 class BeerService {
-    public function __construct()
-    {
-
-    }
-
     public function index()
     {
         $beers = Beer::all();
