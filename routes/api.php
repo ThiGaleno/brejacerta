@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\BeerController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\Api\BeerController@index')->name('beer.index');
+Route::get('/', [BeerController::class, 'index'])->name('beer.index');
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::post('register', [UserController::class, 'register'])->name('user.register');
+Route::post('login', [AuthController::class, 'login'])->name('user.login');
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::group(['Middleware' => 'apiJwt'], function(){
+    Route::post('logout', [AuthController::class, 'logout'])->name('user.logout');
+});

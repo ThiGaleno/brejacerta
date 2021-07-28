@@ -17,7 +17,7 @@ class BeerService {
         return $beers;
     }
 
-    public function getMediaRatings($ratings){
+    public function getMediaRatings($ratings): float{
         $ratingAmount = count($ratings);
         $rate = 0;
         foreach($ratings as $value){
