@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BeerController::class, 'index'])->name('beer.index');
 Route::post('register', [UserController::class, 'register'])->name('user.register');
 Route::post('login', [AuthController::class, 'login'])->name('user.login');
+Route::get('beer/{id}', [BeerController::class, 'getBeerById']);
 
 Route::group(['Middleware' => 'apiJwt'], function(){
     Route::post('logout', [AuthController::class, 'logout'])->name('user.logout');
