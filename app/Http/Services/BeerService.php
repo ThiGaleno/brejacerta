@@ -18,21 +18,21 @@ class BeerService {
         $allBeers = $this->beerRepository->index();
         $beers = $allBeers->toArray();
         foreach($allBeers as $key => $beer){
-            if($beer->rating){
-                $beers[$key]["rating"] = $this->getMediaRatings($beer->rating);
+            if($beer->review){
+                $beers[$key]["review"] = $this->getMediaReviews($beer->review);
             }
         }
         return $beers;
     }
 
-    private function getMediaRatings($ratings): float
+    private function getMediaReviews($reviews): float
     {
-        $ratingAmount = count($ratings);
-        $rate = 0;
-        foreach($ratings as $value){
-            $rate = $rate + $value->rated;
+        $reviewAmount = count($reviews);
+        $review = 0;
+        foreach($reviews as $value){
+            $review = $review + $value->rated;
         }
-        return number_format($rate / $ratingAmount, 2);
+        return number_format($review / $reviewAmount, 2);
     }
 
     public function getBeerById($id)
@@ -40,10 +40,15 @@ class BeerService {
         $allBeers = $this->beerRepository->getBeerById($id);
         $beers = $allBeers->toArray();
         foreach($allBeers as $key => $beer){
-            if($beer->rating){
-                $beers[$key]["rating"] = $this->getMediaRatings($beer->rating);
+            if($beer->review){
+                $beers[$key]["review"] = $this->getMediaReviews($beer->review);
             }
         }
-        dd($beers);
+        return $beers;
+    }
+
+    public function reviewStore(array $request)
+    {
+        return $this->beerRepository->reviewStore($request);
     }
 }

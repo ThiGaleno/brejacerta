@@ -36,4 +36,9 @@ class BeerController extends Controller
         return $this->success($beer, 200);
     }
 
+    public function reviewStore(Request $request)
+    {
+        $review = $this->beerService->reviewStore($request);
+    }
+
 }

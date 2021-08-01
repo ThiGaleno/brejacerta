@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Beer;
-use App\Models\Rating;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 
 class BeerSeeder extends Seeder
@@ -28,32 +28,32 @@ class BeerSeeder extends Seeder
         ];
         $beer = Beer::create($beers);
 
-        Rating::create([
+        Review::create([
             'rated' => 4,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 2.7,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 3.3,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 4.1,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5.5,
             'beer_id' => $beer->id
         ]);
@@ -72,32 +72,32 @@ class BeerSeeder extends Seeder
         ];
         $beer = Beer::create($beers);
 
-        Rating::create([
+        Review::create([
             'rated' => 9,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5.7,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 9.3,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 4.1,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 0,
             'beer_id' => $beer->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5.5,
             'beer_id' => $beer->id
         ]);

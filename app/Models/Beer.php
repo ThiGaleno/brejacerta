@@ -13,8 +13,8 @@ class Beer extends Model
     ];
     use HasFactory;
 
-    public function rating(){
-        return $this->hasMany(Rating::class);
+    public function review(){
+        return $this->hasMany(Review::class);
     }
 
 }
