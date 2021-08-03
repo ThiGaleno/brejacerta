@@ -23,6 +23,10 @@ class User extends Authenticatable implements JWTSubject
         'password',
     ];
 
+    public function review(){
+        return $this->hasMany(Review::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

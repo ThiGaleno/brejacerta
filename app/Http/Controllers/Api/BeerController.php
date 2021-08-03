@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Services\BeerService;
 use App\Traits\ApiResponser;
+use Illuminate\Http\Request;
 
 
 class BeerController extends Controller
@@ -36,9 +37,6 @@ class BeerController extends Controller
         return $this->success($beer, 200);
     }
 
-    public function reviewStore(Request $request)
-    {
-        $review = $this->beerService->reviewStore($request);
-    }
+
 
 }

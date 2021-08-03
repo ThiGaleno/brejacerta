@@ -3,8 +3,11 @@
 namespace App\Http\Services;
 
 use App\Http\Repositories\BeerRepository;
+use App\Traits\ApiResponser;
 
 class BeerService {
+
+    use ApiResponser;
 
     protected $beerRepository;
 
@@ -47,8 +50,5 @@ class BeerService {
         return $beers;
     }
 
-    public function reviewStore(array $request)
-    {
-        return $this->beerRepository->reviewStore($request);
-    }
+
 }
