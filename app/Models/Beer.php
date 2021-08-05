@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Review;
 
 class Beer extends Model
 {
@@ -13,8 +14,8 @@ class Beer extends Model
     ];
     use HasFactory;
 
-    public function rating(){
-        return $this->hasMany(Rating::class);
+    public function review(){
+        return $this->hasMany(Review::class);
     }
 
 }

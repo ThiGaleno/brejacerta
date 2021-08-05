@@ -3,7 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Beer;
-use App\Models\Rating;
+use App\Models\User;
+use App\Models\Review;
 use Illuminate\Database\Seeder;
 
 class BeerSeeder extends Seeder
@@ -27,35 +28,45 @@ class BeerSeeder extends Seeder
             'manufacturer' => 'ambev',
         ];
         $beer = Beer::create($beers);
-
-        Rating::create([
+        Review::create([
             'rated' => 4,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 2.7,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 3.3,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 4.1,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5.5,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
 
@@ -72,34 +83,46 @@ class BeerSeeder extends Seeder
         ];
         $beer = Beer::create($beers);
 
-        Rating::create([
+        Review::create([
             'rated' => 9,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5.7,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 9.3,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 4.1,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 0,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
 
-        Rating::create([
+        Review::create([
             'rated' => 5.5,
-            'beer_id' => $beer->id
+            'beer_id' => $beer->id,
+            'user_id' => User::factory()->create()->id
+
         ]);
     }
 }

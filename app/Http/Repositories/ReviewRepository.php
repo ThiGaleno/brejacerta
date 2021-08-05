@@ -4,24 +4,19 @@ namespace App\Http\Repositories;
 
 use App\Models\Beer;
 use App\Models\Review;
-use App\Models\User;
 
-class BeerRepository
+class ReviewRepository
 {
-    protected $beer;
+    protected $review;
 
-    public function __construct(Beer $beer)
+    public function __construct(Review $review)
     {
-        $this->beer = $beer;
-    }
-    public function index()
-    {
-        return Beer::all();
+        $this->review = $review;
     }
 
-    public function getBeerById($id)
+    public function getById($id)
     {
-        return Beer::where('id', $id)->get();
+        return Beer::where('id', $id)->first();
     }
 
     public function reviewStore($request, $id)
@@ -38,7 +33,7 @@ class BeerRepository
     {
         return Review::where('user_id', auth('api')->user()->id)
             ->where('beer_id', $id)
-            ->firstOrFail();
+            ->first();
     }
 
 

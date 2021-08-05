@@ -22,7 +22,6 @@ class UserController extends Controller
         }
         return $this->success([
             'user' => $user,
-            'token' => $user->createToken('Api Token')->plainTextToken()
         ]);
     }
 }
