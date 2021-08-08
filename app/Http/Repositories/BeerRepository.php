@@ -41,6 +41,9 @@ class BeerRepository
             ->firstOrFail();
     }
 
-
+    public function beerStore($request)
+    {
+        return $this->beer->create($request);
+    }
 
 }

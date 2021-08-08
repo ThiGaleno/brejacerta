@@ -11,7 +11,9 @@ Route::post('register', [UserController::class, 'register'])->name('user.registe
 Route::post('login', [AuthController::class, 'login'])->name('user.login');
 Route::get('beer/{id}', [BeerController::class, 'getBeerById']);
 
+//Rotas autenticadas
 Route::post('/beer/review/{id}', [ReviewController::class, 'reviewStore'])->name('beer.review.store');
+Route::post('/beer/store', [BeerController::class, 'beerStore'])->name('beer.store');
 
 Route::group(['Middleware' => 'apiJwt'], function(){
     Route::post('logout', [AuthController::class, 'logout'])->name('user.logout');

@@ -12,13 +12,12 @@ trait ApiResponser{
      * @param  int|null  $code
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function success($data, string $message = null, int $code = 200)
+    protected function success($data, $message = null, int $code = 200)
     {
         return response()->json([
-            'status' => 'Success',
             'message' => $message,
-            'data' => $data
-        ], $code);
+            'status' => $code,
+        ]);
     }
 
     /**
@@ -29,13 +28,12 @@ trait ApiResponser{
      * @param  array|string|null  $data
      * @return \Illuminate\Http\JsonResponse
      */
-    protected function error(string $message = null, int $code, $data = null)
+    protected function error(string $message, int $code)
     {
         return response()->json([
-            'status' => 'Error',
             'message' => $message,
-            'data' => $data
-        ], $code);
+            'status' => $code,
+        ]);
     }
 
 }

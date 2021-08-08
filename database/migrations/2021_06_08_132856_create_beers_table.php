@@ -22,8 +22,8 @@ class CreateBeersTable extends Migration
             $table->decimal('abv', 10, 2)->comment('Teor acoólico');
             $table->string('glass');
             $table->integer('temperature')->comment('temperatura em graus celsius');
+            $table->string('manufacturer')->default('Nenhuma fabricante cadastrada');
             $table->string('food_pairing');
-            $table->string('manufacturer');
             $table->string('description')->default('sem descrição no momento, obrigado');
             $table->string('url_photo')->default('ainda sem foto');
             $table->timestamps();
@@ -40,3 +40,4 @@ class CreateBeersTable extends Migration
         Schema::dropIfExists('beers');
     }
 }
+
