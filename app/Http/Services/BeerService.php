@@ -50,5 +50,10 @@ class BeerService {
         return $beers;
     }
 
+    public function beerStore($request)
+    {
+        return $this->beerRepository->beerStore($request);
+    }
+
 
 }

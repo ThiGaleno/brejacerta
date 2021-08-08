@@ -33,6 +33,6 @@ class ReviewController extends Controller
             return $this->error("Você já avaliou esse item", 403);
         }
 
-        return $this->success('Atualizado com sucesso', 200);
+        return $this->success('Atualizado com sucesso');
     }
 }
