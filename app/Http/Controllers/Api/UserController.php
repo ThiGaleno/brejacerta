@@ -20,6 +20,6 @@ class UserController extends Controller
         if(!$user){
             $this->error("Não foi possível criar um usuário, por favor entre em contato conosco.", 500);
         }
-        return $this->response()->json(['user' => $user]);
+        return response()->json(['user' => $user]);
     }
 }
