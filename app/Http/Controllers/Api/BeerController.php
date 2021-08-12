@@ -27,7 +27,7 @@ class BeerController extends Controller
         if(!$beers){
             return $this->error("Não encontrado", 404);
         }
-        return $this->respone()->json($beers);
+        return response()->json($beers);
     }
 
     public function getBeerById($id){
@@ -35,7 +35,7 @@ class BeerController extends Controller
         if(!$beer){
             return $this->error("Não encontrado", 404);
         }
-        return $this->respone()->json($beer);
+        return response()->json($beer);
     }
 
     public function beerStore(StoreBeerRequest $request)
@@ -44,7 +44,7 @@ class BeerController extends Controller
         if(!$beer){
             return $this->error('Erro desconhecido, ta dificil, hein? volte a beber que é melhor', 500);
         }
-        return $this->success('Cervejinha cadastrada com sucesso');
+        return response()->json('Cervejinha cadastrada com sucesso');
     }
 
 }
