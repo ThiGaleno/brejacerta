@@ -17,8 +17,9 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->decimal('rated', 10, 2);
             $table->string('commentary')->nullable();
-            $table->foreignId('beer_id')->constrained();
+            $table->foreignId('beer_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

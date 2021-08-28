@@ -26,6 +26,7 @@ class CreateBeersTable extends Migration
             $table->string('food_pairing');
             $table->string('description')->default('sem descrição no momento, obrigado');
             $table->string('url_photo')->default('ainda sem foto');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -55,5 +55,10 @@ class BeerService {
         return $this->beerRepository->beerStore($request);
     }
 
+    public function delete($id)
+    {
+        return $this->beerRepository->delete($id);
+    }
+
 
 }

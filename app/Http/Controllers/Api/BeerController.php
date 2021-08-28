@@ -7,6 +7,7 @@ use App\Http\Requests\StoreBeerRequest;
 use App\Http\Services\BeerService;
 use App\Traits\ApiResponser;
 use Illuminate\Http\Request;
+use App\Models\Beer;
 
 
 class BeerController extends Controller
@@ -45,6 +46,16 @@ class BeerController extends Controller
             return $this->error('Erro desconhecido, ta dificil, hein? volte a beber que é melhor', 500);
         }
         return response()->json('Cervejinha cadastrada com sucesso');
+    }
+
+    public function delete($id)
+    {
+        $beer = $this->beerService->delete($id);
+        if(!$beer){
+            return $this->error('Não foi possível deletar', 500);
+        }
+
+        return response()->json(['message' => 'deletado com sucesso do sistema, só n deleta a cervejinha da sua vida', 'status' => 200]);
     }
 
 }

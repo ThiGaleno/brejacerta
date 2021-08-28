@@ -46,4 +46,10 @@ class BeerRepository
         return $this->beer->create($request);
     }
 
+    public function delete($id)
+    {
+        $beer = Beer::find($id);
+        return $beer->delete();
+    }
+
 }
