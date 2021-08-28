@@ -55,7 +55,7 @@ class BeerController extends Controller
             return $this->error('Não foi possível deletar', 500);
         }
 
-        return response()->json(['message' => 'deletado com sucesso', 'status' => 200]);
+        return response()->json(['message' => 'deletado com sucesso do sistema, só n deleta a cervejinha da sua vida', 'status' => 200]);
     }
 
 }

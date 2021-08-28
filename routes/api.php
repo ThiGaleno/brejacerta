@@ -16,7 +16,7 @@ Route::get('beer/{id}', [BeerController::class, 'getBeerById']);
 Route::group(['middleware' => 'apiJwt'], function(){
     Route::post('logout', [AuthController::class, 'logout'])->name('user.logout');
     Route::post('/beer/review/{id}', [ReviewController::class, 'reviewStore'])->name('beer.review.store');
-    Route::post('/delete/{id}', [BeerController::class, 'delete'])
+    Route::delete('/delete/{id}', [BeerController::class, 'delete']);
 });
 
 Route::group(['middleware' => 'admin'], function(){
