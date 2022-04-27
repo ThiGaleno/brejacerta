@@ -19,6 +19,7 @@ Route::group(['middleware' => 'apiJwt'], function(){
     Route::delete('/delete/{id}', [BeerController::class, 'delete']);
 });
 
+//Rotas admin
 Route::group(['middleware' => 'admin'], function(){
     Route::post('/beer/store', [BeerController::class, 'beerStore'])->name('beer.store');
 });
